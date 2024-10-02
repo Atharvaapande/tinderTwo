@@ -18,7 +18,7 @@ export default function ChatScreen() {
     const getSwipedUserandConID = async () => {
       try {
         const isMatch = await fetch(
-          `http://192.168.27.159:3001/matchFound/${matchID}`
+          `http://yourAPI:3001/matchFound/${matchID}`
         );
         const isMatchJson = await isMatch.json();
         setMatchData(isMatchJson);
