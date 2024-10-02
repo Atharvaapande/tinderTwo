@@ -41,7 +41,7 @@ export default function HomeScreen() {
   useEffect(() => {
     const getData = async () => {
       try {
-        const res = await fetch("http://192.168.27.159:3001/people");
+        const res = await fetch("http://yourAPI:3001/people");
         const json = await res.json();
         const people = json.filter((user) => user._id !== userID);
         setPeople(people);
@@ -73,7 +73,7 @@ export default function HomeScreen() {
     const swipedUresID = people[cardIndex]._id;
     try {
       const putInPass = await fetch(
-        `http://192.168.27.159:3001/updateData/${userID}`,
+        `http://yourAPI:3001/updateData/${userID}`,
         {
           method: "PUT",
           headers: {
@@ -99,7 +99,7 @@ export default function HomeScreen() {
 
     try {
       const putInMatch = await fetch(
-        `http://192.168.27.159:3001/updateData/${userID}`,
+        `http://yourAPI:3001/updateData/${userID}`,
         {
           method: "PUT",
           headers: {
@@ -124,7 +124,7 @@ export default function HomeScreen() {
 
     try {
       const isMatch = await fetch(
-        `http://192.168.27.159:3001/matchFound/${swipedUresID}`
+        `http://yourAPI:3001/matchFound/${swipedUresID}`
       );
       const isMatchJson = await isMatch.json();
       const matchFound = isMatchJson.match.some(
@@ -138,7 +138,7 @@ export default function HomeScreen() {
         setMatchLastName(matchLastName);
         try {
           const createConversation = await fetch(
-            "http://192.168.27.159:3001/messages",
+            "http://yourAPI:3001/messages",
             {
               method: "POST",
               headers: {
@@ -154,7 +154,7 @@ export default function HomeScreen() {
 
           try {
             const updateMatchConversationID = await fetch(
-              `http://192.168.27.159:3001/updateExsistingMatch/${userID}`,
+              `http://yourAPI:3001/updateExsistingMatch/${userID}`,
               {
                 method: "PUT",
                 headers: {
@@ -175,7 +175,7 @@ export default function HomeScreen() {
 
           try {
             const updateMatchConversationID = await fetch(
-              `http://192.168.27.159:3001/updateExsistingMatch/${swipedUresID}`,
+              `http://yourAPI:3001/updateExsistingMatch/${swipedUresID}`,
               {
                 method: "PUT",
                 headers: {
