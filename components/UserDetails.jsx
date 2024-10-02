@@ -44,7 +44,7 @@ export default function UserDetails({ isVisible, close }) {
 
   // const saveUser = async () => {
   //   try {
-  //     const doFetch = await fetch("http://192.168.27.159:3001/saveData", {
+  //     const doFetch = await fetch("http://yourAPI:3001/saveData", {
   //       method: "PUT",
   //       headers: {
   //         "Content-Type": "application/json",
@@ -67,7 +67,7 @@ export default function UserDetails({ isVisible, close }) {
   const updateUser = async () => {
     try {
       const doFetch = await fetch(
-        `http://192.168.27.159:3001/updateData/${id}`,
+        `http://yourAPI:3001/updateData/${id}`,
         {
           method: "PUT",
           headers: {
