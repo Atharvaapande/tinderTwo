@@ -32,7 +32,7 @@ export default function MessageScreen({ route }) {
   const flatListRef = useRef(null);
 
   useEffect(() => {
-    const newSocket = io("http://192.168.27.159:3001");
+    const newSocket = io("http://yourAPI:3001");
     setSocket(newSocket);
 
     newSocket.on("receiveMessage", (message) => {
