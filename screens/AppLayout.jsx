@@ -36,7 +36,7 @@ export default function AppLayout() {
 
       const saveUser = async () => {
         try {
-          const doFetch = await fetch("http://192.168.27.159:3001/saveData", {
+          const doFetch = await fetch("http://yourAPI:3001/saveData", {
             method: "POST",
             headers: {
               "Content-Type": "application/json",
@@ -59,7 +59,7 @@ export default function AppLayout() {
       const getUserData = async () => {
         try {
           const res = await fetch(
-            `http://192.168.27.159:3001/getUser/${userPhone}`
+            `http://yourAPI:3001/getUser/${userPhone}`
           );
           const data = await res.json();
           if (!res.ok) {
